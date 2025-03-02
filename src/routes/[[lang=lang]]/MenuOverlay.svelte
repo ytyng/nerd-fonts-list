@@ -70,6 +70,12 @@
           <div class="text-xs text-gray-300" >A site to list all Unicode emojis</div>
         {/if}
       </div>
+      <div class="p-2 border-b border-gray-700">
+        <a href="https://github.com/ytyng/nerd-fonts-list"
+           target="_blank"
+           class="text-blue-300 hover:underline"
+        ><span class="nerd-font text-xl leading-none">󰊤</span> Github</a>
+      </div>
       <div class="p-2">
         <a href="https://www.ytyng.com"
            target="_blank"

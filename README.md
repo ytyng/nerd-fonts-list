@@ -26,7 +26,7 @@ If you search for `nerd font` on the [Home Brew](https://brew.sh/) page, the ins
 
 # License
 This site uses [RobotoMono Nerd Font](https://www.nerdfonts.com/font-downloads), which is [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono) converted to a Nerd Font, to display symbols.
-Roboto Mono is licensed under the [Apache 2.0 License](/fonts/RobotoMono-License.txt).
+Roboto Mono is licensed under the [Apache 2.0 License](/static/fonts/RobotoMono-License.txt).
 
 ----
 
