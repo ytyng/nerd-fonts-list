@@ -1,38 +1,33 @@
-# sv
+# About This Site
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This site lists the symbols included in [Nerd Fonts](https://www.nerdfonts.com/).
 
-## Creating a project
+It was created to easily search for symbols when dealing with systems that have Nerd Font installed.
 
-If you're seeing this, you've probably already done this step. Congrats!
+# About Nerd Fonts
 
-```bash
-# create a new project in the current directory
-npx sv create
+These are fonts distributed at [nerdfonts.com](https://www.nerdfonts.com/).
+They are monospaced fonts commonly used in programming and terminals, combined with symbol fonts.
 
-# create a new project in my-app
-npx sv create my-app
+# How to Install Nerd Fonts
+
+It is easy to install using [Home Brew](https://brew.sh/).
+
+Example:
+```
+brew install --cask font-roboto-mono-nerd-font
 ```
 
-## Developing
+There are multiple base fonts, so choose and install the one you prefer.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+[Nerd Fonts Download Page](https://www.nerdfonts.com/font-downloads)
 
-```bash
-npm run dev
+If you search for `nerd font` on the [Home Brew](https://brew.sh/) page, the installation command will be displayed.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+# License
+This site uses [RobotoMono Nerd Font](https://www.nerdfonts.com/font-downloads), which is [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono) converted to a Nerd Font, to display symbols.
+Roboto Mono is licensed under the [Apache 2.0 License](/fonts/RobotoMono-License.txt).
 
-## Building
+----
 
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+[ytyng.com](https://www.ytyng.com/)
