@@ -1,0 +1,10 @@
+# 言語
+日本語で応答してください
+
+# プロジェクトの概要
+このプロジェクトは、Nerd-Fonts ( https://www.nerdfonts.com/ ) のフォントをWeb ページとして一覧表示する Webページをサービスするものです。
+
+data/ 以下のスクリプトで、 nerdfonts の Github ( https://github.com/ryanoasis/nerd-fonts ) から最新のリリース情報を取得し、その情報を元に、フォントの一覧を生成します。
+
+# フレームワーク
+Sveltekit
