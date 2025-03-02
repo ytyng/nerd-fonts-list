@@ -101,13 +101,13 @@
 
 <div class="relative">
   <div
-    class="sticky top-0 z-2 bg-gray-800 text-white flex h-12 justify-between items-center"
+    class="sticky top-0 z-2 bg-gray-800 text-white flex flex-col md:flex-row h-24 md:h-12 md:justify-between items-stretch md:items-center"
   >
     <div class="text-2xl py-2 px-4 flex text-gray-300">
       <button on:click={() => (menuVisible = true)} class="nerd-font mr-2">
         󰍜
       </button>
-      <h1 class="font-bold text-gray-200">All Nerd Fonts Glyphs</h1>
+      <h1 class="font-bold text-gray-200">{#if isJa }全 Nerd Font シンボル{:else}All Nerd Fonts Glyphs{/if}</h1>
       <button
         class="nerd-font ml-2 text-gray-400"
         on:click={() => (helpVisible = true)}
@@ -115,7 +115,7 @@
         
       </button>
     </div>
-    <div class="pe-3">
+    <div class="px-4 md:pe-3">
       <input
         type="search"
         class="block w-full lg:w-96 py-1 px-2 rounded bg-gray-500 hover:bg-white hover:text-gray-900 placeholder-opacity-50 nerd-font"
@@ -131,7 +131,7 @@
     <div class="relative">
       <span id={`g-${group.groupName}`}></span>
       <h2
-        class="sticky top-12 z-1 bg-gray-700/80 text-white text-3xl py-2 px-4 font-bold backdrop-blur-sm"
+        class="sticky top-24 md:top-12 z-1 bg-gray-700/80 text-white text-3xl py-2 px-4 font-bold backdrop-blur-sm"
       >
         {group.groupName}
       </h2>
@@ -149,7 +149,7 @@
               <h3 class="px-2 text-xs text-indigo-300/70 capitalize">
                 {fixGliphName(glyph.name)}
               </h3>
-              <div class="hidden md:block px-2 text-xs text-green-300/50">
+              <div class="hidden md:block px-2 text-xs text-green-300/50 whitespace-nowrap">
                 {glyph.code}
               </div>
             </div>

@@ -41,7 +41,7 @@
     <div class="bg-gray-800">
       <div class="p-2 border-b border-gray-700">
         <button on:click={onopenhelp} class="text-blue-300">
-          {#if isJa}ヘルプ{:else}Help{/if}
+          {#if isJa}このサイトについて{:else}About{/if}
         </button>
       </div>
       <div class="p-2 border-b border-gray-700">
