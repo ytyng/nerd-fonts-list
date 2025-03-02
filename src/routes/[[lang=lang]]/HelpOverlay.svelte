@@ -17,6 +17,10 @@
       </h2>
       <button on:click={onclose} class="nerd-font text-xl">  </button>
     </div>
+
+    {#if isJa}
+    {/if}
+
   </div>
 </div>
 
