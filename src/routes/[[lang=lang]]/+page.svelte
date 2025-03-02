@@ -13,7 +13,7 @@
   let searchQ = "";
   let debouncedSearchQ = "";
   let searchQUpdateTimer: number | null = null;
-  let searchFocus = false
+  let searchFocus = false;
 
   const inputSearchQ = () => {
     if (searchQUpdateTimer) {
@@ -30,25 +30,25 @@
       return glyphgroups as GlyphGroup[];
     }
 
-    const matchedGroups = []
-    const needle = debouncedSearchQ.toLowerCase()
+    const matchedGroups = [];
+    const needle = debouncedSearchQ.toLowerCase();
 
     for (const group of glyphgroups) {
       if (group.groupName.toLowerCase().includes(needle)) {
-        matchedGroups.push(group)
-        continue
+        matchedGroups.push(group);
+        continue;
       }
-      const matchedGlyphs = []
+      const matchedGlyphs = [];
       for (const glyph of group.glyphs) {
         if (glyph.name.toLowerCase().includes(needle)) {
-          matchedGlyphs.push(glyph)
+          matchedGlyphs.push(glyph);
         }
       }
       if (matchedGlyphs.length > 0) {
         matchedGroups.push({
           groupName: group.groupName,
-          glyphs: matchedGlyphs
-        })
+          glyphs: matchedGlyphs,
+        });
       }
     }
     return matchedGroups as GlyphGroup[];
@@ -67,6 +67,24 @@
   };
 </script>
 
+<svelte:head>
+  {#if isJa}
+    <title>全 Nerd Fonts シンボル</title>
+    <meta
+      name="description"
+      content="ナードフォント(Nerd Fonts)のすべての記号(シンボル)を表示しているページです。Nerd Fonts をPCにインストールして、コンソールアプリを開発する時に使う記号を探す時に便利です。"
+    />
+    <link rel="alternate" hreflang="en" href="https://nerdfonts.ytyng.com/" />
+  {:else}
+    <title>All Nerd Fonts Glyphs</title>
+    <meta
+      name="description"
+      content="This page shows all the symbols of Nerd Fonts. It is useful to find symbols to use when developing console applications by installing Nerd Fonts on your PC."
+    />
+    <link rel="alternate" hreflang="ja" href="https://nerdfonts.ytyng.com/ja/" />
+  {/if}
+</svelte:head>
+
 <div class="relative">
   <div
     class="sticky top-0 z-2 bg-gray-800 text-white flex h-12 justify-between items-center"
@@ -75,7 +93,7 @@
       <button on:click={() => (menuVisible = true)} class="nerd-font mr-2">
         󰍜
       </button>
-      <h1 class="font-bold text-gray-200">All Glyphs of Nerd Fonts</h1>
+      <h1 class="font-bold text-gray-200">All Nerd Fonts Glyphs</h1>
       <button
         class="nerd-font ml-2 text-gray-400"
         on:click={() => (helpVisible = true)}
@@ -108,12 +126,10 @@
       >
         {#each group.glyphs as glyph}
           <li class="bg-gray-900 text-white rounded break-all">
-            <div class="glyph text-center"
-
-            >
-            <button on:click={() => copyText(glyph.char)}>
-              {glyph.char}
-            </button>
+            <div class="glyph text-center">
+              <button on:click={() => copyText(glyph.char)}>
+                {glyph.char}
+              </button>
             </div>
             <div class="flex justify-center md:justify-between pb-2">
               <h3 class="px-2 text-xs text-indigo-300/70 capitalize">
@@ -135,6 +151,10 @@
     groups={filteredGroups()}
     {isJa}
     onclose={() => (menuVisible = false)}
+    onopenhelp={() => {
+      menuVisible = false;
+      helpVisible = true;
+    }}
   />
 {/if}
 
@@ -183,6 +203,5 @@
       transform: translateY(10px);
       opacity: 0;
     }
-
   }
 </style>
