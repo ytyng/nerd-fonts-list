@@ -55,6 +55,21 @@
           >日本語で表示</a>
         {/if}
       </div>
+      <div class="p-2 border-b border-gray-700">
+        {#if isJa}
+          <a href="https://emoji.ytyng.com/"
+          target="_blank"
+             class="text-blue-300 hover:underline"
+          >絵文字エクスプローラー</a><br>
+          <div class="text-xs text-gray-300" >全 Unicode 絵文字を一覧するサイト</div>
+        {:else}
+          <a href="https://emoji.ytyng.com/"
+          target="_blank"
+             class="text-blue-300 hover:underline"
+          >Emoji Explorer</a><br>
+          <div class="text-xs text-gray-300" >A site to list all Unicode emojis</div>
+        {/if}
+      </div>
       <div class="p-2">
         <a href="https://www.ytyng.com"
            target="_blank"

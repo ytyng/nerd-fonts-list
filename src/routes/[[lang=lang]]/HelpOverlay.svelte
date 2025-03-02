@@ -1,4 +1,8 @@
 <script lang="ts">
+  import MarkdownDocument from "./MarkdownDocument.svelte";
+  import helpMarkdownJa from "$lib/help.ja.md?raw";
+  import helpMarkdownEn from "$lib/help.en.md?raw";
+
   export let isJa: boolean;
   export let onclose: () => void;
 </script>
@@ -9,18 +13,18 @@
   on:click|self={onclose}
 >
   <div
-    class="help-dialog bg-gray-700 w-full max-w-screen-sm h-full overflow-y-scroll text-white"
+    class="help-dialog bg-gray-700 w-full max-w-screen-sm h-full rounded overflow-y-scroll text-white relative px-3 pb-4"
   >
-    <div class="flex justify-between items-center p-2">
-      <h2 class="text-2xl font-bold">
-        {#if isJa}このサイトについて{:else}What is this site?{/if}
-      </h2>
-      <button on:click={onclose} class="nerd-font text-xl">  </button>
-    </div>
-
     {#if isJa}
+      <MarkdownDocument content={helpMarkdownJa} />
+    {:else}
+      <MarkdownDocument content={helpMarkdownEn} />
     {/if}
 
+    {#if isJa}{/if}
+  </div>
+  <div class="fixed top-0 right-3 z-1 text-white/80 text-3xl leading-none">
+    <button on:click={onclose} class="nerd-font text-xl"></button>
   </div>
 </div>
 
