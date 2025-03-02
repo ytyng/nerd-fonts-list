@@ -3,6 +3,8 @@
   import HelpOverlay from "./HelpOverlay.svelte";
   import glyphgroups from "$lib/glyphgroups.json";
   import type { GlyphGroup } from "$lib/interfaces";
+  import { onMount } from "svelte";
+  import { redirectJaDirOnce } from "$lib/i18n";
 
   export let data: { lang: string };
 
@@ -65,6 +67,18 @@
       snackbarVisible = false;
     }, 2000);
   };
+
+  onMount(async () => {
+    if (!isJa) {
+      // 英語サイトを見ていて、ブラウザの言語設定が日本語なら1回だけリダイレクト
+      const navigated = await redirectJaDirOnce()
+      if (navigated) {
+        data.lang = 'ja'
+        isJa = true
+      }
+    }
+  })
+
 </script>
 
 <svelte:head>
